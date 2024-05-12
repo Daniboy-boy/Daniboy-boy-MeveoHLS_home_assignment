@@ -1,14 +1,29 @@
-Python version I used:
+# Meveo HLS - Home Assignment
 
-Python 3.11.9
+## Setup and Usage
 
-In main.py you can find the flask up. I run It locally so after running main.py you'll get a URL that points to a web server running on the local machine, paste and run it on Chrome's address bar.
+1. **Flask App (main.py)**:
+   - Run `main.py` to start the Flask server locally.
+   - After running `main.py`, you'll receive a URL pointing to a web server running on your local machine. Paste and run this URL in Chrome's address bar.
 
+2. **Model Implementation (moveoHLS_task.py)**:
+   - Implementations for the `app` function, which retrieves claims from a path to a Google Patents page and runs the model for clustering the claims.
 
-In moveoHLS_task.py you can find the implementations for the app function meaning get claims from a path to a google patents page and running the model for clustering the claims.
+3. **Research and Analysis (grouping_claims.ipynb)**:
+   - This Jupyter notebook contains your research and analysis.
 
-In grouping_claims.ipynb you can find the my research and analysis.
+4. **Frontend Template (templates/flask_frontend.html)**:
+   - Frontend template for your Flask application.
 
-Inside the folder templates you can find flask_frontend.html the front-end of my up.
+## Files and Directories
 
-I had great time working on this assignment, thank you for the opportunity! 
+Briefly describe the contents of each file and directory in your project.
+
+- `main.py`: Entry point for the Flask application.
+- `moveoHLS_task.py`: Contains the implementation for the `app` function.
+- `grouping_claims.ipynb`: Jupyter notebook for research and analysis.
+- `templates/flask_frontend.html`: Frontend template for the Flask application.
+
+## Python Version
+
+Python version used: 3.11.9
