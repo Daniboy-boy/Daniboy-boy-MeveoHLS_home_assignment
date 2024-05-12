@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cluster Patent Claims here!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cluster Patent Claims here!</h2>
+    <label for="patentPath">Patent Path:</label>
+    <input type="text" id="patentPath">
+    <br>
+    <label for="nClusters">Number of Clusters:</label>
+    <input type="text" id="nClusters">
+    <br>
+    <button onclick="callGroups()">Call Groups</button>
+    <div id="result"></div>
+
+    <script>
+        function callGroups() {
+            const patentPath = document.getElementById('patentPath').value;
+            const nClusters = document.getElementById('nClusters').value;
+            const data = {
+                patent_path: patentPath,
+                n_clusters: nClusters
+            };
+
+            fetch('/groups', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = JSON.stringify(data.result);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
